@@ -1,4 +1,5 @@
-export default function ProductCard({ image,name, category, price,}) {
+import { FaTrash } from "react-icons/fa";
+export default function ProductCard({ image, name, category, price, }) {
   return (
     <div className="product-card">
       <img src={image} alt={name} className="product-image" />
@@ -10,7 +11,9 @@ export default function ProductCard({ image,name, category, price,}) {
 
         <div className="product-btns">
           <button className="btn-add">Add to Cart</button>
-          <button className="btn-delete">Delete</button>
+          <button className="btn-delete">
+            <FaTrash />
+          </button>
         </div>
       </div>
     </div>
