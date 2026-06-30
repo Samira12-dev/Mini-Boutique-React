@@ -6,6 +6,7 @@ import './App.css'
 import Navbar from './component/Navbar'
 import CategoryFilter from './component/CategoryFilter'
 import ProductList from './component/ProductList'
+import CartItem from './pages/CartItem'
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
     <div className='container'>
     <CategoryFilter/>
     <ProductList/>
+
     </div>
    
   
