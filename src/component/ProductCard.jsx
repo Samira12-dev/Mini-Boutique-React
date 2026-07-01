@@ -1,17 +1,33 @@
 import { FaTrash } from "react-icons/fa";
-export default function ProductCard({ image, name, category, price, }) {
+
+export default function ProductCard({
+  product,addCart, deleteCart
+}) {
   return (
     <div className="product-card">
-      <img src={image} alt={name} className="product-image" />
+      <img
+        src={product.image}
+        alt={product.name}
+        className="product-image"
+      />
 
       <div className="product-info">
-        <h3>{name}</h3>
-        <p className="category">{category}</p>
-        <p className="price">${price}</p>
+        <h3>{product.name}</h3>
+        <p className="category">{product.category}</p>
+        <p className="price">{product.price} dh</p>
 
         <div className="product-btns">
-          <button className="btn-add">Add to Cart</button>
-          <button className="btn-delete">
+          <button
+            className="btn-add"
+            onClick={addCart}
+          >
+            Add to Cart
+          </button>
+
+          <button
+            className="btn-delete"
+            onClick={deleteCart}
+          >
             <FaTrash />
           </button>
         </div>

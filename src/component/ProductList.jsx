@@ -1,19 +1,12 @@
-import { products } from "../assets/Data/ListProducts"; 
+import { products } from "../assets/Data/ListProducts";
+import CategoryFilter from "./CategoryFilter";
 import ProductCard from "./ProductCard";
-export default function ProductList(){
-    return (
-        <section className="products">
-            <div className="product-list">
-           {products.map((product)=>(
-            <ProductCard
-            key={product.id}
-            image={product.image}
-            name={product.name}
-            category={product.category}
-            price={product.price}
-            />
-           ))}
-        </div>
-        </section>
-    )
+
+export default function ProductList({addCart,deleteCart}) {
+  return (
+    <section className="products">
+      <CategoryFilter addCart={addCart} deleteCart={deleteCart} />
+
+    </section>
+  );
 }

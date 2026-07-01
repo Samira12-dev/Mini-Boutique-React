@@ -1,9 +1,9 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
- function Navbar() {
+ function Navbar({cartCount}) {
 return (
-<header className="header">
+<header className="header" >
       <nav className="navbar">
         <div className="navbar-logo">
              <FaBagShopping className="bagIcon" size={25} />
@@ -25,7 +25,8 @@ return (
 
        <div className="paniers">
          <FaShoppingCart className="icon" size={24} />
-        <FaMoon className="icon" size={24} />
+        
+        <span>{cartCount}</span>
        </div>
       </nav>
       

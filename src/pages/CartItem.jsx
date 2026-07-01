@@ -4,7 +4,7 @@ export default function CartItem({image,name,price,quantity}){
             <img src="" alt="image" />
             <div>
                 <h4>T-short</h4>
-                <p>$12</p>
+                <p>Dh12</p>
                 <div className="quantity">
                     <button>-</button>
                     <span></span>
