@@ -1,12 +1,13 @@
-import { products } from "../assets/Data/ListProducts";
 import CategoryFilter from "./CategoryFilter";
-import ProductCard from "./ProductCard";
 
-export default function ProductList({addCart,deleteCart}) {
+export default function ProductList({ products, addCart, deleteCartItem }) {
   return (
     <section className="products">
-      <CategoryFilter addCart={addCart} deleteCart={deleteCart} />
-
+      <CategoryFilter 
+        products={products} 
+        addCart={addCart} 
+        deleteCartItem={deleteCartItem} 
+      />
     </section>
   );
 }

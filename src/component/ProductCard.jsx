@@ -1,7 +1,7 @@
 import { FaTrash } from "react-icons/fa";
 
 export default function ProductCard({
-  product,addCart, deleteCart
+  product,addCart, deleteCartItem
 }) {
   return (
     <div className="product-card">
@@ -24,11 +24,11 @@ export default function ProductCard({
             Add to Cart
           </button>
 
-         {/* <button className="btn-delete"
-            onClick={deleteCart}
+          <button className="btn-delete"
+            onClick={() => deleteCartItem(product.id)}
           >
             <FaTrash />
-          </button> */}
+          </button> 
             
 
         </div>

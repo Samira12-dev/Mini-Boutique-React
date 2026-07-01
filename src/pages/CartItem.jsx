@@ -1,6 +1,5 @@
 import { FaTrash } from "react-icons/fa";
-import { useState } from 'react'
-
+import { useState } from "react";
 
 export default function CartItem({ product, deleteCart }) {
     const [quantity, setQuantity] = useState(1);
