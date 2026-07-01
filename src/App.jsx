@@ -6,27 +6,30 @@ import './App.css'
 import Navbar from './component/Navbar'
 import CategoryFilter from './component/CategoryFilter'
 import ProductList from './component/ProductList'
-import CartItem from './pages/CartItem'
+import Cart from './pages/Cart'
+import { Route, Routes } from 'react-router-dom'
 function App() {
 
-  const [cart, setCart] = useState(0);
+  const [cart, setCart] = useState([]);
 
-const addToCart = () => {
-  setCart((prev) => prev + 1);
-};
 
-const removeFromCart = () => {
-  setCart((prev) => (prev > 0 ? prev - 1 : 0));
-};
+ const addToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+const deleteCart = (id) => {
+    setCart((prevCart) => prevCart.filter(item => item.id !== id));
+  };
+
   return (
     <>
-    <Navbar cartCount={cart}/>
-    <div className='container'>
-    <ProductList  addCart={addToCart} deleteCart={removeFromCart}/>
+      <Navbar cartCount={cart.length} />
+      <Routes>
+          <Route path="/" element={<ProductList addCart={addToCart} deleteCart={deleteCart} />} />
+        <Route path="/cart" element={<Cart cartItems={cart} deleteCart={deleteCart} />} />
+      </Routes>
 
-    </div>
-   
-  
+
+
     </>
   )
 }

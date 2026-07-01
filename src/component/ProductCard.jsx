@@ -19,17 +19,18 @@ export default function ProductCard({
         <div className="product-btns">
           <button
             className="btn-add"
-            onClick={addCart}
+            onClick={()=>addCart(product) }
           >
             Add to Cart
           </button>
 
-          <button
-            className="btn-delete"
+         {/* <button className="btn-delete"
             onClick={deleteCart}
           >
             <FaTrash />
-          </button>
+          </button> */}
+            
+
         </div>
       </div>
     </div>
